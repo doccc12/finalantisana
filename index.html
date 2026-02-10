@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/montana.png" type="image/png">
+    <title>Clima Volcán Antisana | Proyecto Estadístico</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="logo">
+            <img src="img/montana.png" alt="Logo Antisana" class="logo-img">
+            ANTISANA 
+        </div>
+        <nav>
+            <a href="#" onclick="navegar('inicio')" class="nav-link active">Inicio</a>
+            <a href="#" onclick="navegar('descriptiva')" class="nav-link">Descriptiva</a>
+            <a href="#" onclick="navegar('inferencial')" class="nav-link">Inferencial</a>
+            <a href="#" onclick="navegar('machine')" class="nav-link">MOdelos de Regresión</a>
+            <a href="#" onclick="navegar('conclusiones')" class="nav-link">Mas</a>
+        </nav>
+    </header>
+
+<main>
+    <div id="vista-inicio" class="vista active">
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1>ANÁLISIS ESTADÍSTICO DEL <br><span class="highlight">VOLCÁN ANTISANA</span></h1>
+                <p>Estudio geoespacial y monitoreo de pendientes en la zona de reserva.</p>
+                <div class="stats-resumen"></div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="grid-2-col">
+                
+                <div class="texto-intro">
+                    
+                    <div class="step-item">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>Planteamiento del Problema</h3>
+                        </div>
+                        <p>La información climática de la estación Antisana se encuentra dispersa y no ha sido analizada estadísticamente de forma integral. Esto dificulta la comprensión del comportamiento de variables como la temperatura y la precipitación, necesarias para la toma de decisiones ambientales y operativas.</p>
+                        <a href="#" class="btn-dataset">Ver Dataset</a>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>Objetivo General</h3>
+                        </div>
+                        <p>Aplicar herramientas estadísticas y de Machine Learning para analizar las variables meteorológicas registradas en la estación Antisana mediante el uso de herramientas computacionales.</p>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3>Objetivo Específico</h3>
+                        </div>
+                        <div class="lista-items">
+                            <p class="obj-separado"><strong>1.</strong> Conocer la situación actual de las variables meteorológicas registradas en la estación Antisana, a través del análisis de sus características principales mediante medidas estadísticas descriptivas.</p>
+                            <p class="obj-separado"><strong>2.</strong> Aplicar modelos de probabilidad para establecer conclusiones sobre el comportamiento de las variables meteorológicas de la estación Antisana, a partir del análisis de los datos disponibles.</p>
+                            <p class="obj-separado"><strong>3.</strong> Identificar y deducir relaciones entre las variables meteorológicas registradas en la estación Antisana, con el fin de realizar estimaciones y apoyar el análisis predictivo.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="imagen-intro">
+                    <img src="img/antisanavolcan.avif" alt="Volcán Antisana" class="img-destacada">
+                    <img src="img/antisana2.jpg" alt="Detalle Antisana" class="img-destacada">
+                </div>
+
+            </div>
+        </section>
+        
+        <section class="seccion-mapa">
+            <div class="grid-mapa">
+                
+                <div class="contenido-mapa">
+                    <h2 class="titulo-mapa">Mapa de<br>Ubicación</h2>
+                    <p>
+                    </p>
+                    <a href="documentos/mapa_ubicacion.pdf" target="_blank" class="btn-mapa">
+                        <i class="fas fa-file-pdf"></i> DESCARGAR PDF
+                    </a>
+                </div>
+
+                <div class="contenedor-img-mapa">
+                    <img src="img/WhatsApp Image 2026-02-08 at 1.02.32 PM.jpeg" alt="Mapa de Ubicación" class="img-mapa-borde">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container seccion-mapa-interactivo">
+            
+            <div class="cabecera-interactivo">
+                <h2>EXPLORA EL MAPA DETALLADO</h2>
+                <p>Navega por las capas de información geográfica del Volcán Antisana.</p>
+            </div>
+        
+            <div class="marco-mapa">
+    <iframe 
+        src="mapa_qgis2/mapaindex.html" 
+        width="100%" 
+        height="600" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+</div>
+</section>
+    </div> <div id="vista-descriptiva" class="vista">
+       <section class="cabecera-descriptiva">
+        <div class="overlay"></div>
+        <h1>Estadística Descriptiva</h1>
+    </section>
+        <section class="conceptos-container">
+    <div class="conceptos-header">
+        <i class="fas fa-chart-pie"></i>
+        <h2>Conceptos Básicos</h2>
+    </div>
+    <section class="conceptos-horizontal">
+    <div class="conceptos-grid">
+        <div class="card-concepto">
+            <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
+            <h3>Población</h3>
+            <div class="card-body">
+                <p><strong>Textual:</strong>Todos los registros posibles de las condiciones meteorológicas del Volcán Antisana, medidos en su zona de influencia a lo largo del tiempo.</p>
+                <div class="simbolico-mini">
+                    <p><strong>Simbolico</strong></p>
+                    <code>U={x∣x∈registros meteorológicos∧Zona(x)=“Antisana”}</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-concepto">
+            <div class="card-icon"><i class="fas fa-user-tag"></i></div>
+            <h3>Individuo</h3>
+            <div class="card-body">
+                <p><strong>Textual:</strong> Un registro meteorológico del Volcán Antisana correspondiente a una fecha específica.</p>
+                <div class="simbolico-mini">
+                    <p><strong>Simbolico</strong></p>
+                    <code>x∈Utal quex=(fecha,longitud,latitud,elevación,variables climáticas)</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-concepto">
+            <div class="card-icon"><i class="fas fa-vial"></i></div>
+            <h3>Muestra</h3>
+            <div class="card-body">
+                <p><strong>Textual:</strong>El conjunto de 367 registros meteorológicos del Volcán Antisana contenidos en el archivo de datos.</p>
+                <div class="simbolico-mini">
+                    <p><strong>Simbolico</strong></p>
+                    <code>M={x1​,x2​,…,x367​}⊂U</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-concepto">
+            <div class="card-icon"><i class="fas fa-microscope"></i></div>
+            <h3>Caso de Estudio</h3>
+            <div class="card-body">
+                <p><strong>Textual:</strong>Cada uno de los registros de las condiciones meteorológicas del Volcán Antisana que contienen información climática y geográfica durante el período de observación considerado.</p>
+                <div class="simbolico-mini">
+                    <p><strong>Simbolico</strong></p>
+                    <code>xi​∈Mi=1,2,3,…,nn=367</code>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="seccion-tabla">
+        <div class="tabla-header">
+            <i class="fas fa-table"></i>
+            <h2>Tabla de Variables</h2>
+        </div>
+
+        <div class="tabla-scroll">
+            <table class="tabla-datos">
+                <thead>
+                    <tr>
+                        <th>Nombre Original</th>
+                        <th>Rango [Min; Max]</th>
+                        <th>Media (x̄)</th>
+                        <th>Mediana (Me)</th>
+                        <th>Moda (Mo)</th>
+                        <th>Varianza (S²)</th>
+                        <th>Desv. Est. (S)</th>
+                        <th>C.V (%)</th>
+                        <th>Asimetría (As)</th>
+                        <th>Curtosis (K)</th>
+                        <th>Valores Atípicos</th>
+                        <th>Links RPUBS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Date</td>
+                        <td>1/1/2012 - 31/12/2012</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>Sin valores atípicos</td>
+                        <td><a href="https://rpubs.com/BENJAMINIVAN/anti_fecha" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+                    <tr>
+                        <td>Longitude</td>
+                        <td colspan="9" class="texto-centro">No aplica por único valor</td>
+                        <td></td>
+                        <td><a href="#" target="_blank" class="btn-link-tabla">No Aplica</a></td>
+                    </tr>
+                    <tr>
+                        <td>Latitude</td>
+                        <td colspan="9" class="texto-centro">No aplica por único valor</td>
+                        <td></td>
+                        <td><a href="#" target="_blank" class="btn-link-tabla">No Aplica</a></td>
+                    </tr>
+                    <tr>
+                        <td>Elevation</td>
+                        <td colspan="9" class="texto-centro">No aplica por único valor</td>
+                        <td></td>
+                        <td><a href="#" target="_blank" class="btn-link-tabla">No Aplica</a></td>
+                    </tr>
+                    <tr>
+                        <td>Max Temperature</td>
+                        <td>[10.32; 23.79]</td>
+                        <td>15.74</td>
+                        <td>15.51</td>
+                        <td>14.06</td>
+                        <td>8.22</td>
+                        <td>2.87</td>
+                        <td>18.22</td>
+                        <td>0.3906</td>
+                        <td>-0.54</td>
+                        <td>0 (Sin atípicos)</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/tem-max-des" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+                    <tr>
+                        <td>Min Temperature</td>
+                        <td>[2.56; 10.85]</td>
+                        <td>8.05</td>
+                        <td>8</td>
+                        <td>7.66</td>
+                        <td>1.89</td>
+                        <td>1.37</td>
+                        <td>17.08</td>
+                        <td>-0.4377</td>
+                        <td>0.61</td>
+                        <td>7 [2.65; 4.55]</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/tem-min-des" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+                    <tr>
+                        <td>Precipitation</td>
+                        <td>[0.01; 94.72]</td>
+                        <td>17.1</td>
+                        <td>12.94</td>
+                        <td>5.27</td>
+                        <td>259.7</td>
+                        <td>16.12</td>
+                        <td>94.21</td>
+                        <td>1.3058</td>
+                        <td>2.02</td>
+                        <td>10 [57.83; 94.72]</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/preci-des" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+                    <tr>
+                        <td>Wind</td>
+                        <td>[0.59; 2.99]</td>
+                        <td>1.77</td>
+                        <td>1.75</td>
+                        <td>1.52, 1.79</td>
+                        <td>0.21</td>
+                        <td>0.46</td>
+                        <td>25.78</td>
+                        <td>0.1113</td>
+                        <td>-0.7</td>
+                        <td>0 (Sin atípicos)</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/viento-des" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+                    <tr>
+                        <td>Relative Humidity</td>
+                        <td>[56; 99]</td>
+                        <td>89.5</td>
+                        <td>94</td>
+                        <td>96.61</td>
+                        <td>118.03</td>
+                        <td>10.86</td>
+                        <td>12.14</td>
+                        <td>-1.1868</td>
+                        <td>0.24</td>
+                        <td>5 [56; 62]</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/hume-des" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+                    <tr>
+                        <td>Solar</td>
+                        <td>[1.26; 30.27]</td>
+                        <td>14.44</td>
+                        <td>12.66</td>
+                        <td>6.1</td>
+                        <td>69.36</td>
+                        <td>8.33</td>
+                        <td>57.69</td>
+                        <td>0.2996</td>
+                        <td>-1.23</td>
+                        <td>0 (Sin atípicos)</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/solar-des" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="seccion-clasificacion">
+        
+        <div class="bloque-variable">
+            <h2 class="titulo-tipo">VARIABLES CUALITATIVAS</h2>
+            
+            <div class="grupo-variable">
+                <h3 class="subtitulo-tipo">Nominales</h3>
+                
+                <div class="grid-una-columna">
+                    
+                    <a href="https://rpubs.com/BENJAMINIVAN/anti_fecha" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #2c3e50;">
+                            <i class="fas fa-calendar-alt icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>DATE</h4>
+                            <p>Fecha de registro</p>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="bloque-variable">
+            <h2 class="titulo-tipo">VARIABLES CUANTITATIVAS</h2>
+            <div class="grupo-variable">
+                <h3 class="subtitulo-tipo">Continuas</h3>
+                <div class="grid-tres-columnas">
+
+                    <a href="https://rpubs.com/Denis_Alexander/tem-max-infe" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #e74c3c;">
+                            <i class="fas fa-temperature-high icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>MAX TEMPERATURE</h4>
+                            <p>Temperatura Máxima (°C)</p>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+
+                    <a href="https://rpubs.com/Denis_Alexander/tem-min-des" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #3498db;">
+                            <i class="fas fa-temperature-low icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>MIN TEMPERATURE</h4>
+                            <p>Temperatura Mínima (°C)</p>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+
+                    <a href="https://rpubs.com/Denis_Alexander/preci-des" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #2980b9;">
+                            <i class="fas fa-cloud-showers-heavy icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>PRECIPITATION</h4>
+                            <p>Lluvia (mm)</p>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+
+                    <a href="https://rpubs.com/Denis_Alexander/viento-des" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #95a5a6;">
+                            <i class="fas fa-wind icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>WIND</h4>
+                            <p>Velocidad Viento (m/s)</p>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+
+                    <a href="https://rpubs.com/Denis_Alexander/hume-des" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #1abc9c;">
+                            <i class="fas fa-tint icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>RELATIVE HUMIDITY</h4>
+                            <p>Humedad (%)</p>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+
+                     <a href="https://rpubs.com/Denis_Alexander/solar-des" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #f1c40f;">
+                            <i class="fas fa-sun icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>SOLAR</h4>
+                            <p>Radiación Solar</p>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    </section>
+    </div> <div id="vista-inferencial" class="vista">
+       <section class="cabecera-inferencial">
+        <div class="overlay"></div>
+        <h1>Estadística Descriptiva</h1>
+    </section>
+    <section class="seccion-tabla">
+        <div class="tabla-header">
+            <i class="fas fa-clipboard-check"></i>
+            <h2>Resultados: Pruebas de Bondad de Ajuste</h2>
+        </div>
+
+        <div class="tabla-scroll">
+            <table class="tabla-datos">
+                <thead>
+                    <tr>
+                        <th>Nombre Original</th>
+                        <th>Test de Pearson</th>
+                        <th>Test Chi²</th>
+                        <th>% Error</th>
+                        <th>% Confianza</th>
+                        <th>Links RPubs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Date</td>
+                        <td>0</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td><a href="#" target="_blank" class="btn-link-tabla">N/A</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Longitude</td>
+                        <td colspan="4" class="texto-centro">No aplica por único valor</td>
+                        <td><span class="texto-centro">No aplica</span></td>
+                    </tr>
+                    <tr>
+                        <td>Latitude</td>
+                        <td colspan="4" class="texto-centro">No aplica por único valor</td>
+                        <td><span class="texto-centro">No aplica</span></td>
+                    </tr>
+                    <tr>
+                        <td>Elevation</td>
+                        <td colspan="4" class="texto-centro">No aplica por único valor</td>
+                        <td><span class="texto-centro">No aplica</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Max Temperature</td>
+                        <td>Int 1 (Log-Norm Izquierda): 95.04%<br>Int 2 (Log-Norm Derecha): 97.97%</td>
+                        <td>INT 1: APROBADO<br>INT 2: APROBADO</td>
+                        <td>+/- 0.30</td>
+                        <td>95% (2*E)</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/tem-max-infe" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Min Temperature</td>
+                        <td>Log-Normal (Sesgo Izquierda): 91.43%</td>
+                        <td>APROBADO</td>
+                        <td>+/- 0.14</td>
+                        <td>95% (2*E)</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/tem-min-inferen" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Precipitation</td>
+                        <td>Exponencial (Global): 99.56%</td>
+                        <td>APROBADO</td>
+                        <td>+/- 1.68</td>
+                        <td>95% (2*E)</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/preci-inferen" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Wind</td>
+                        <td>Normal (Global): 96.25%</td>
+                        <td>APROBADO</td>
+                        <td>+/- 0.05</td>
+                        <td>95% (2*E)</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/viento-inferen" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Relative Humidity</td>
+                        <td>Exponencial Reflejado (Inicial): 94.77%</td>
+                        <td>APROBADO</td>
+                        <td>+/- 0.87</td>
+                        <td>95% (2*E)</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/hume-inferen" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Solar</td>
+                        <td>Intervalo 1 (Baja): 84.59%<br>Intervalo 2 (Alta): 95.73%</td>
+                        <td>INT 1: APROBADO LUEGO DE OPTIMIZACIÓN<br>INT 2: APROBADO</td>
+                        <td>+/- 0.87</td>
+                        <td>95% (2*E)</td>
+                        <td><a href="https://rpubs.com/Denis_Alexander/solar-inferen" target="_blank" class="btn-link-tabla">Ver RPubs</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="seccion-clasificacion">
+        
+        <div class="bloque-variable">
+            <h2 class="titulo-tipo">VARIABLES CUALITATIVAS</h2>
+            
+            <div class="grupo-variable">
+                <h3 class="subtitulo-tipo">Nominales</h3>
+                <div class="grid-una-columna">
+                    
+                    <a href="#" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #2c3e50;">
+                            <i class="fas fa-calendar-alt icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>DATE</h4>
+                            <p>Prueba de bondad de ajuste</p>
+                            <span class="btn-ver-mas">Ver Análisis</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="bloque-variable">
+            <h2 class="titulo-tipo">VARIABLES CUANTITATIVAS</h2>
+            
+            <div class="grupo-variable">
+                <h3 class="subtitulo-tipo">Continuas</h3>
+                <div class="grid-tres-columnas">
+                    
+                    <a href="https://rpubs.com/Denis_Alexander/tem-max-infe" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #e74c3c;">
+                            <i class="fas fa-temperature-high icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>MAX TEMPERATURE</h4>
+                            <p>Ajuste: Log-Normal</p>
+                            <span class="btn-ver-mas">Ver Análisis</span>
+                        </div>
+                    </a>
+
+                    <a href="https://rpubs.com/Denis_Alexander/tem-min-inferen" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #3498db;">
+                            <i class="fas fa-temperature-low icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>MIN TEMPERATURE</h4>
+                            <p>Ajuste: Log-Normal</p>
+                            <span class="btn-ver-mas">Ver Análisis</span>
+                        </div>
+                    </a>
+
+                    <a href="https://rpubs.com/Denis_Alexander/preci-inferen" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #2980b9;">
+                            <i class="fas fa-cloud-showers-heavy icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>PRECIPITATION</h4>
+                            <p>Ajuste: Exponencial</p>
+                            <span class="btn-ver-mas">Ver Análisis</span>
+                        </div>
+                    </a>
+
+                    <a href="https://rpubs.com/Denis_Alexander/viento-inferen" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #95a5a6;">
+                            <i class="fas fa-wind icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>WIND</h4>
+                            <p>Ajuste: Normal</p>
+                            <span class="btn-ver-mas">Ver Análisis</span>
+                        </div>
+                    </a>
+
+                    <a href="https://rpubs.com/Denis_Alexander/hume-inferen" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #1abc9c;">
+                            <i class="fas fa-tint icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>RELATIVE HUMIDITY</h4>
+                            <p>Ajuste: Exp. Reflejado</p>
+                            <span class="btn-ver-mas">Ver Análisis</span>
+                        </div>
+                    </a>
+
+                     <a href="https://rpubs.com/Denis_Alexander/solar-inferen" target="_blank" class="card-variable">
+                        <div class="card-img-top" style="background-color: #f1c40f;">
+                            <i class="fas fa-sun icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>SOLAR</h4>
+                            <p>Ajuste: Intervalos</p>
+                            <span class="btn-ver-mas">Ver Análisis</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+    
+    <div id="vista-machine" class="vista">
+        <div class="cabecera-seccion"><h1>Modelos de Regresión</h1></div>
+        <div class="container"><p>Contenido cargando...</p></div>
+    </div>
+    
+    <div id="vista-conclusiones" class="vista">
+        <div class="cabecera-seccion"><h1>Conclusiones</h1></div>
+        <div class="container"><p>Contenido cargando...</p></div>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+<footer class="pie-pagina">
+    <div class="contenedor-footer">
+        
+        <div class="col-footer">
+            <h3>Integrantes</h3>
+            <ul class="lista-integrantes">
+                <li>Elkin Yautibug</li>
+                <li>Anahi Macias</li>
+                <li>Denis Tercero</li>
+                <li>Benjamin Salazar</li>
+            </ul>
+        </div>
+
+        <div class="col-footer">
+            <h3>Contacto</h3>
+            <p>0962569683</p>
+            <p>Quito, Ecuador</p>
+        </div>
+
+        <div class="col-footer">
+            <h3>Síguenos</h3>
+            <div class="redes-sociales">
+                <a href="https://www.instagram.com/TU_USUARIO" target="_blank" class="icono-red"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/TU_USUARIO" target="_blank" class="icono-red"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/TU_USUARIO" target="_blank" class="icono-red"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Proyecto de Estadística | FIGEMPA - UCE</p>
+    </div>
+</footer>
+</body>
+</html>
