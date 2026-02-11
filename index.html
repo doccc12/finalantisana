@@ -23,8 +23,8 @@
             <a href="#" onclick="navegar('inicio')" class="nav-link active">Inicio</a>
             <a href="#" onclick="navegar('descriptiva')" class="nav-link">Descriptiva</a>
             <a href="#" onclick="navegar('inferencial')" class="nav-link">Inferencial</a>
-            <a href="#" onclick="navegar('machine')" class="nav-link">MOdelos de Regresión</a>
-            <a href="#" onclick="navegar('conclusiones')" class="nav-link">Mas</a>
+            <a href="#" onclick="navegar('regresion')" class="nav-link">Modelos de Regresión</a>
+            <a href="#" onclick="navegar('nosotros')" class="nav-link">Sobre Nosotros</a>
         </nav>
     </header>
 
@@ -90,7 +90,7 @@
                     <h2 class="titulo-mapa">Mapa de<br>Ubicación</h2>
                     <p>
                     </p>
-                    <a href="documentos/mapa_ubicacion.pdf" target="_blank" class="btn-mapa">
+                    <a href="https://drive.google.com/file/d/1FMX0FOMGniSIokPfA0DXosfSoG83uclj/view?usp=sharing" target="_blank" class="btn-mapa">
                         <i class="fas fa-file-pdf"></i> DESCARGAR PDF
                     </a>
                 </div>
@@ -180,6 +180,159 @@
             </div>
         </div>
     </div>
+    <section class="seccion-tabla">
+        
+        <div class="tabla-header">
+            <i class="fas fa-book"></i>
+            <h2>Variables</h2>
+        </div>
+
+        <div class="contenedor-buscador">
+            <input type="text" id="inputBuscador" onkeyup="buscarEnTabla()" placeholder="Buscar variable (ej: Solar, Wind)...">
+            <i class="fas fa-search icono-buscar"></i>
+        </div>
+
+        <div class="tabla-scroll">
+            <table class="tabla-datos" id="tablaDiccionario">
+                <thead>
+                    <tr>
+                        <th>Nombre Original</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Tipo</th>
+                        <th>Subtipo</th>
+                        <th>Dominio</th>
+                        <th>Rango</th>
+                        <th>Instrumento</th>
+                        <th>Unidad</th>
+                        <th>Escala</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Date</td>
+                        <td>Fecha</td>
+                        <td>Registro Diario</td>
+                        <td>Cuantitativa</td>
+                        <td>Discreta</td>
+                        <td>D={x|x ∈ DD/MM/AAAA}</td>
+                        <td>R ⊆ DU {hoja_de_datos}</td>
+                        <td>Calendario</td>
+                        <td>DÍA-MES-AÑO</td>
+                        <td>Intervalo</td>
+                    </tr>
+                    <tr>
+                        <td>Longitude</td>
+                        <td>Longitud</td>
+                        <td>Ubicación Geográfica</td>
+                        <td>Cuantitativa</td>
+                        <td>Continua</td>
+                        <td>D={x|x ∈ R ∧ -180≤x≤180}</td>
+                        <td>R ⊆ DU {hoja_de_datos}</td>
+                        <td>GPS/SIG</td>
+                        <td>GRADOS (°)</td>
+                        <td>Intervalo</td>
+                    </tr>
+                    <tr>
+                        <td>Latitude</td>
+                        <td>Latitud</td>
+                        <td>Ubicación Geográfica</td>
+                        <td>Cuantitativa</td>
+                        <td>Continua</td>
+                        <td>D={x|x ∈ R ∧ -90≤x≤90}</td>
+                        <td>R ⊆ DU {hoja_de_datos}</td>
+                        <td>GPS/SIG</td>
+                        <td>GRADOS (°)</td>
+                        <td>Intervalo</td>
+                    </tr>
+                    <tr>
+                        <td>Elevation</td>
+                        <td>Elevación</td>
+                        <td>Altura sobre el Nivel del Mar</td>
+                        <td>Cuantitativa</td>
+                        <td>Continua</td>
+                        <td>D={x|x ∈ R^+ ∪ {0}}</td>
+                        <td>R ⊆ DU {hoja_de_datos}</td>
+                        <td>Altímetro/DEM</td>
+                        <td>msnm</td>
+                        <td>Intervalo</td>
+                    </tr>
+                    <tr>
+                        <td>Max Temperature</td>
+                        <td>Temperatura Max</td>
+                        <td>Temperatura Máxima Diaria</td>
+                        <td>Cuantitativa</td>
+                        <td>Continua</td>
+                        <td>D={x|x ∈ R}</td>
+                        <td>R ⊆ DU {hoja_de_datos}</td>
+                        <td>Termómetro</td>
+                        <td>°C</td>
+                        <td>Intervalo</td>
+                    </tr>
+                    <tr>
+                        <td>Min Temperature</td>
+                        <td>Temperatura Min</td>
+                        <td>Temperatura Mínima Diaria</td>
+                        <td>Cuantitativa</td>
+                        <td>Continua</td>
+                        <td>D={x|x ∈ R}</td>
+                        <td>R ⊆ DU {hoja_de_datos}</td>
+                        <td>Termómetro</td>
+                        <td>°C</td>
+                        <td>Intervalo</td>
+                    </tr>
+                    <tr>
+                        <td>Precipitation</td>
+                        <td>Precipitación</td>
+                        <td>Lluvia Diaria Acumulada</td>
+                        <td>Cuantitativa</td>
+                        <td>Continua</td>
+                        <td>D={x|x ∈ R^+ ∪ {0}}</td>
+                        <td>R ⊆ DU {hoja_de_datos}</td>
+                        <td>Pluviómetro</td>
+                        <td>mm</td>
+                        <td>Razón</td>
+                    </tr>
+                    <tr>
+                        <td>Wind</td>
+                        <td>Velocidad del Viento</td>
+                        <td>Velocidad promedio Diaria</td>
+                        <td>Cuantitativa</td>
+                        <td>Continua</td>
+                        <td>D={x|x ∈ R^+ ∪ {0}}</td>
+                        <td>R ⊆ DU {hoja_de_datos}</td>
+                        <td>Anemómetro</td>
+                        <td>m/s</td>
+                        <td>Razón</td>
+                    </tr>
+                    <tr>
+                        <td>Relative Humidity</td>
+                        <td>Humedad Relativa</td>
+                        <td>Humedad del Aire</td>
+                        <td>Cuantitativa</td>
+                        <td>Continua</td>
+                        <td>D={x|x ∈ R^+ ∪ {0}}</td>
+                        <td>R ⊆ DU {hoja_de_datos}</td>
+                        <td>Higrómetro</td>
+                        <td>Fracción (0-1)</td>
+                        <td>Razón</td>
+                    </tr>
+                    <tr>
+                        <td>Solar</td>
+                        <td>Radiación Solar</td>
+                        <td>Radiación Solar Diaria</td>
+                        <td>Cuantitativa</td>
+                        <td>Continua</td>
+                        <td>D={x|x ∈ R^+ ∪ {0}}</td>
+                        <td>R ⊆ DU {hoja_de_datos}</td>
+                        <td>Piranómetro</td>
+                        <td>MJ/m²</td>
+                        <td>Razón</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
     </section>
     <section class="seccion-tabla">
         <div class="tabla-header">
@@ -223,20 +376,17 @@
                     <tr>
                         <td>Longitude</td>
                         <td colspan="9" class="texto-centro">No aplica por único valor</td>
-                        <td></td>
-                        <td><a href="#" target="_blank" class="btn-link-tabla">No Aplica</a></td>
+                        <td><span class="texto-centro">No aplica</span></td>
                     </tr>
                     <tr>
                         <td>Latitude</td>
                         <td colspan="9" class="texto-centro">No aplica por único valor</td>
-                        <td></td>
-                        <td><a href="#" target="_blank" class="btn-link-tabla">No Aplica</a></td>
+                        <td><span class="texto-centro">No aplica</span></td>
                     </tr>
                     <tr>
                         <td>Elevation</td>
                         <td colspan="9" class="texto-centro">No aplica por único valor</td>
-                        <td></td>
-                        <td><a href="#" target="_blank" class="btn-link-tabla">No Aplica</a></td>
+                        <td><span class="texto-centro">No aplica</span></td>
                     </tr>
                     <tr>
                         <td>Max Temperature</td>
@@ -618,16 +768,176 @@
     </section>
 
 </div>
+    </section>
+    </div> <div id="vista-regresion" class="vista">
+       <section class="cabecera-regresion">
+        <div class="overlay"></div>
+        <h1>Modelos de Regresión</h1>
+    </section>
+    <section>
+        <h3 class="subtitulo-tipo">Tipos de Modelos</h3>
+
+        <div class="contenedor-zigzag">
+
+            <div class="fila-regresion">
+                <div class="col-card">
+                    <a href="https://rpubs.com/BENJAMINIVAN/1394987" target="_blank" class="card-variable card-small">
+                        <div class="card-img-top" style="background-color: #3498db;">
+                            <i class="fas fa-chart-line icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Regresión Lineal</h4>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-texto">
+                    <h3>Regresión lineal: Temperatura Máxima en función de la Radiación Solar</h3>
+                    <p>Análisis de la relación directa entre la Radiación Solar (variable independiente) y la Temperatura Máxima (variable dependiente). Se busca establecer una línea recta que minimice el error entre los datos observados.</p>
+                </div>
+            </div>
+
+            <div class="fila-regresion inverso">
+                <div class="col-card">
+                    <a href="https://rpubs.com/BENJAMINIVAN/regre_expo_antisana1" target="_blank" class="card-variable card-small">
+                        <div class="card-img-top" style="background-color: #9b59b6;">
+                            <i class="fas fa-chart-area icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Regresión Exponencial</h4>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-texto">
+                    <h3>Regresión exponencial: Humedad Relativa en función de la Temperatura Máxima</h3>
+                    <p>Modelado del comportamiento de la Humedad Relativa frente a la Temperatura Máxima. Este modelo es ideal cuando los datos muestran un crecimiento o decrecimiento rápido proporcional a su valor actual.</p>
+                </div>
+            </div>
+
+            <div class="fila-regresion">
+                <div class="col-card">
+                    <a href="https://rpubs.com/BENJAMINIVAN/1395552" target="_blank" class="card-variable card-small">
+                        <div class="card-img-top" style="background-color: #e67e22;">
+                            <i class="fas fa-bolt icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Regresión Potencial</h4>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-texto">
+                    <h3>Regresión potencial: Precipitación en función de la Radiación Solar</h3>
+                    <p>Estudio de la relación no lineal entre la Radiación Solar y la Precipitación. Los modelos potenciales son útiles para fenómenos físicos donde las variables siguen leyes de potencias.</p>
+                </div>
+            </div>
+
+            <div class="fila-regresion inverso">
+                <div class="col-card">
+                    <a href="https://rpubs.com/Anahi_Macias/Precipitacion_Humedad" target="_blank" class="card-variable card-small">
+                        <div class="card-img-top" style="background-color: #2ecc71;">
+                            <i class="fas fa-wave-square icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Regresión Logarítmica</h4>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-texto">
+                    <h3>Regresión logarítmica: Humedad Relativa en función de la Precipitación</h3>
+                    <p>Análisis comparativo entre regresión Logarítmica y Polinómica de segundo grado (G2) para entender la relación compleja entre Precipitación y Humedad. Se evalúa cuál se ajusta mejor a la curva de datos.</p>
+                </div>
+            </div>
+
+            <div class="fila-regresion">
+                <div class="col-card">
+                    <a href="https://rpubs.com/BENJAMINIVAN/multivariable_antisana" target="_blank" class="card-variable card-small">
+                        <div class="card-img-top" style="background-color: #e74c3c;">
+                            <i class="fas fa-project-diagram icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Regresión Multivariable</h4>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-texto">
+                    <h3>Regresión Multivariable: Humedad Relativa en función de la Radiación Solar y la Precipitación</h3>
+                    <p>Modelo complejo que involucra múltiples variables simultáneamente. Permite entender cómo interactúan la temperatura, humedad y radiación en conjunto para definir el clima de la estación Antisana.</p>
+                </div>
+            </div>
+
+            <div class="fila-regresion inverso">
+                <div class="col-card">
+                    <a href="https://rpubs.com/BENJAMINIVAN/1395443" target="_blank" class="card-variable card-small">
+                        <div class="card-img-top" style="background-color: #34495e;">
+                            <i class="fas fa-wind icono-tarjeta"></i>
+                        </div>
+                        <div class="card-info">
+                            <h4>Regresión Polinómica</h4>
+                            <span class="btn-ver-mas">Ver en Rbups</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-texto">
+                    <h3>Regresión Polinómica: Humedad Relativa en función de la Velocidad del Viento</h3>
+                    <p>Modelado estadístico específico para determinar cómo la velocidad del viento afecta a la humedad relativa en la zona de estudio, crucial para entender la dispersión de humedad.</p>
+                </div>
+            </div>
+    </section>
+</div>
     
-    <div id="vista-machine" class="vista">
-        <div class="cabecera-seccion"><h1>Modelos de Regresión</h1></div>
-        <div class="container"><p>Contenido chhhhhhvvv benjagay</p></div>
+    <div id="vista-nosotros" class="vista">
+        <div class="contenido-cabecera">
+            <h1>Sobre Nosotros</h1>
+        </div>
     </div>
-    
-    <div id="vista-conclusiones" class="vista">
-        <div class="cabecera-seccion"><h1>Conclusiones</h1></div>
-        <div class="container"><p>Contenido cgffgb</p></div>
-    </div>
+
+    <section class="container" style="text-align: center; padding: 60px 20px;">
+        
+        <h2 style="color: #2c3e50; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800;">Nuestro Equipo</h2>
+        <p style="color: #7f8c8d; margin-bottom: 60px; font-size: 1.1rem;">Haz clic en cada tarjeta para ver más información</p>
+
+        <div class="grid-integrantes">
+            <div class="grid-integrantes">
+            
+            <a href="https://drive.google.com/file/d/1k7D6-jeG_RipM4FcvYkcml5B9lEozB7S/view?usp=sharing" target="_blank" class="card-integrante">
+                <div class="icono-perfil">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Elkin Yautibug</h3>
+                <p>Estudiante</p>
+            </a>
+
+            <a href="https://onedrive.live.com/?id=67785F3074D26E17%21sd0498493c839492e823202a74703c7e6&cid=67785F3074D26E17&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy82Nzc4NWYzMDc0ZDI2ZTE3L0lRQ1RoRW5RT2NndVNZSXlBcWRIQThmbUFjOXhfZHZZaGptWFRlUVBUbExXV0hFP2U9ekNiYUNV&parId=67785F3074D26E17%21scb54649c0fdd43d087a397515eb2b248&o=OneUp" target="_blank" class="card-integrante">
+                <div class="icono-perfil">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Anahi Macias</h3>
+                <p>Estudiante</p>
+            </a>
+
+            <a href="https://drive.google.com/file/d/182JFjIQ4B9nb172KaMJKeNlOHDVdrlhs/view?usp=sharing" target="_blank" class="card-integrante">
+                <div class="icono-perfil">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Denis Tercero</h3>
+                <p>Estudiante</p>
+            </a>
+
+            <a href="https://drive.google.com/file/d/109d6eSy5_1d6ql2hPtja9VotJJS-bqLd/view?usp=sharing" target="_blank" class="card-integrante">
+                <div class="icono-perfil">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Benjamin Salazar</h3>
+                <p>Estudiante</p>
+            </a>
+
+        </div>
+    </section>
+</div>
 
 </main>
 
@@ -666,5 +976,15 @@
         <p>&copy; 2025 Proyecto de Estadística | FIGEMPA - UCE</p>
     </div>
 </footer>
+<div id="modal-advertencia" class="modal-overlay">
+    <div class="modal-contenido">
+        <div class="icono-modal">
+            <i class="fas fa-info-circle"></i>
+        </div>
+        <h2>Importante</h2>
+        <p>Este proyecto tiene un carácter exclusivamente académico y se encuentra en continuo desarrollo. Los datos y análisis presentados se utilizan únicamente con fines educativos y no deben considerarse como asesoramiento profesional.</p>
+        <button onclick="cerrarModal()" class="btn-entendido">Entendido</button>
+    </div>
+</div>
 </body>
 </html>
